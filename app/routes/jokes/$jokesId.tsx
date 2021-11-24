@@ -6,7 +6,6 @@ import { db } from "../../utils/db.server";
 type LoaderData = { joke: Joke };
 
 export let loader: LoaderFunction = async ({ params }) => {
-	console.log(params);
 	let joke = await db.joke.findUnique({
 		where: { id: params.jokesId },
 	});
